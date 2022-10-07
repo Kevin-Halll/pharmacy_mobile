@@ -12,6 +12,7 @@ class _detailState extends State<detail> {
   double _price = 20.50;
   bool _ifPriscribed = true;
   String _productType = 'Drug';
+  String _productName = 'Vitamin C';
   String _productDescription =
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.';
 
@@ -100,9 +101,9 @@ class _detailState extends State<detail> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 //<------------ product name ------------>
-                const Text(
-                  'Vitamin C',
-                  style: TextStyle(
+                Text(
+                  '$_productName',
+                  style: const TextStyle(
                       color: Color.fromRGBO(56, 55, 55, 10),
                       fontSize: 24,
                       fontWeight: FontWeight.w500),
