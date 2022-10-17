@@ -15,8 +15,16 @@ class Login extends StatelessWidget {
           child: Column(
             children: [
               //<--------- logo --------->
-              Image(
-                image: AssetImage('assets/images/pharmacy_logo.png'),
+              Column(
+                children: [
+                  Image(
+                    image: AssetImage('assets/images/pharmacy_logo.png'),
+                  ),
+                  Text(
+                    'Amber Care Pharmaceuticals',
+                    style: TextStyle(color: Color.fromRGBO(27, 117, 188, 0.0)),
+                  )
+                ],
               ),
 
               SizedBox(
