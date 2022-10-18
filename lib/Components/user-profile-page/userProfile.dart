@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pharmacy_mobile/Components/banner/banner.dart';
+
+import '../../constants/constants.dart';
 
 class UserProfile extends StatefulWidget {
   const UserProfile({super.key});
@@ -19,6 +22,7 @@ class _UserProfileState extends State<UserProfile> {
         //<------------ start of appbar section ------------>
         backgroundColor: Colors.white,
         appBar: AppBar(
+          titleSpacing: 10,
           backgroundColor: Colors.white,
           elevation: 0.0,
           leading: IconButton(
@@ -26,14 +30,15 @@ class _UserProfileState extends State<UserProfile> {
               _key.currentState!.openDrawer();
             },
             icon: Ink(
+              padding: EdgeInsets.all(4),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(231, 241, 248, 10),
                   borderRadius: BorderRadius.circular(7.32)),
-              height: 30,
-              width: 30,
+              // height: 30,
+              // width: 30,
               child: const Icon(
                 Icons.menu,
-                size: 28,
+                // size: 28,
                 color: Color.fromRGBO(170, 170, 170, 100),
               ),
             ),
@@ -43,18 +48,22 @@ class _UserProfileState extends State<UserProfile> {
                 style: TextStyle(color: Colors.black, fontSize: 14)),
           ),
           actions: [
-            IconButton(
-              onPressed: () {},
-              icon: Ink(
-                decoration: BoxDecoration(
+            Padding(
+              padding: const EdgeInsets.only(right: 10.0),
+              child: IconButton(
+                onPressed: () {},
+                icon: Ink(
+                  decoration: BoxDecoration(
                     color: Color.fromRGBO(231, 241, 248, 10),
-                    borderRadius: BorderRadius.circular(7.32)),
-                height: 30,
-                width: 30,
-                child: const Icon(
-                  Icons.person,
-                  size: 28,
-                  color: Color.fromRGBO(170, 170, 170, 100),
+                    borderRadius: BorderRadius.circular(7.32),
+                  ),
+                  height: 30,
+                  width: 30,
+                  child: const Icon(
+                    Icons.person,
+                    size: 28.0,
+                    color: Color.fromRGBO(170, 170, 170, 100),
+                  ),
                 ),
               ),
             ),
@@ -66,99 +75,101 @@ class _UserProfileState extends State<UserProfile> {
         drawer: const HamburgerMenu(),
 
         //<------------ start of body section ------------>
-        body: Container(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              //<------------ search and filter section ------------>
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.search,
-                            color: Color.fromRGBO(121, 116, 116, 10)),
-                        hintStyle:
-                            TextStyle(color: Color.fromRGBO(121, 116, 116, 10)),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: const BorderSide(
-                            width: 0,
-                            style: BorderStyle.none,
+        body: SingleChildScrollView(
+          child: Container(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                //<------------ search and filter section ------------>
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.search,
+                              color: Color.fromRGBO(121, 116, 116, 10)),
+                          hintStyle: TextStyle(
+                              color: Color.fromRGBO(121, 116, 116, 10)),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: const BorderSide(
+                              width: 0,
+                              style: BorderStyle.none,
+                            ),
                           ),
+                          fillColor: Color.fromRGBO(231, 241, 248, 10),
+                          filled: true,
+                          hintText: 'Search',
+                          isDense: true,
                         ),
-                        fillColor: Color.fromRGBO(231, 241, 248, 10),
-                        filled: true,
-                        hintText: 'Search',
-                        isDense: true,
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  Container(
+                    SizedBox(
+                      width: 8,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(231, 241, 248, 10),
+                          borderRadius: BorderRadius.circular(7.32)),
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.filter_alt,
+                          color: Color.fromRGBO(170, 170, 170, 100),
+                          size: 28,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+
+                //<------------ slider section ------------>
+                Container(height: 180, child: Banner1()),
+
+                //<------------ shop by category ------------>
+                Container(
+                    margin: EdgeInsets.only(top: 20, bottom: 20),
+                    padding: EdgeInsets.all(12),
                     decoration: BoxDecoration(
                         color: Color.fromRGBO(231, 241, 248, 10),
                         borderRadius: BorderRadius.circular(7.32)),
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.filter_alt,
-                        color: Color.fromRGBO(170, 170, 170, 100),
-                        size: 28,
-                      ),
-                    ),
-                  )
-                ],
-              ),
-
-              //<------------ slider section ------------>
-              Row(),
-
-              //<------------ shop by category ------------>
-              Container(
-                  margin: EdgeInsets.only(top: 20, bottom: 20),
-                  padding: EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                      color: Color.fromRGBO(231, 241, 248, 10),
-                      borderRadius: BorderRadius.circular(7.32)),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Shop by Category',
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text('Shop by Category',
+                                style: TextStyle(
+                                    color: Color.fromARGB(156, 32, 32, 32),
+                                    fontWeight: FontWeight.bold)),
+                            Text(
+                              'SEE ALL',
                               style: TextStyle(
-                                  color: Color.fromARGB(156, 32, 32, 32),
-                                  fontWeight: FontWeight.bold)),
-                          Text(
-                            'SEE ALL',
-                            style: TextStyle(
-                                color: Color.fromRGBO(43, 48, 180, 100),
-                                fontWeight: FontWeight.bold),
-                          )
-                        ],
-                      ),
-                      // Row(
-                      //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //   children: [_categories()],
-                      // )
-                      Container(
-                        height: 170,
-                        child: ListView.builder(
-                            itemCount: 4,
-                            scrollDirection: Axis.horizontal,
-                            itemBuilder: (context, index) {
-                              return _categories();
-                            }),
-                      )
-                    ],
-                  )),
+                                  color: thirdBlue,
+                                  fontWeight: FontWeight.bold),
+                            )
+                          ],
+                        ),
+                        // Row(
+                        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        //   children: [_categories()],
+                        // )
+                        Container(
+                          height: 170,
+                          child: ListView.builder(
+                              itemCount: 4,
+                              scrollDirection: Axis.horizontal,
+                              itemBuilder: (context, index) {
+                                return _categories();
+                              }),
+                        )
+                      ],
+                    )),
 
-              //<------------ specail offers ------------>
-            ],
+                //<------------ specail offers ------------>
+              ],
+            ),
           ),
         ));
   }

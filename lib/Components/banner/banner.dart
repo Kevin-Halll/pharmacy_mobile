@@ -11,7 +11,7 @@ class Banner1 extends StatelessWidget {
         Stack(
           children: [
             Padding(
-              padding: const EdgeInsets.all(25.0),
+              padding: const EdgeInsets.only(top: 25.0, bottom: 25),
               child: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
@@ -97,7 +97,7 @@ class Banner1 extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 15,  0, 15),
+                      padding: const EdgeInsets.fromLTRB(20, 15, 0, 15),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -123,14 +123,15 @@ class Banner1 extends StatelessWidget {
                               )
                             ],
                           ),
-                          ElevatedButton(onPressed: (){},
+                          ElevatedButton(
+                              onPressed: () {},
                               style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(thirdBlue),
-                                shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20)
-                                ))
-                              ),
-                              
+                                  backgroundColor:
+                                      MaterialStateProperty.all(thirdBlue),
+                                  shape: MaterialStateProperty.all(
+                                      RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(20)))),
                               child: Text('Become a Member')),
                           // TextButton(onPressed: (){}, child: Text('Become a Memeber'))
                         ],
@@ -210,7 +211,8 @@ class Banner1 extends StatelessWidget {
                 SizedBox(
                   width: 20,
                 ),
-                Image.asset('/images/delivery-man.png', height: 175, alignment: Alignment.bottomLeft),
+                Image.asset('/images/delivery-man.png',
+                    height: 175, alignment: Alignment.bottomLeft),
               ],
             ),
           ],

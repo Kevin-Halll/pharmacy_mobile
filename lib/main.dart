@@ -27,7 +27,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: (Colors.blueGrey),
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      home: Registration(),
+      home: UserProfile(),
+      // home: Banner1(),
     );
   }
 }
