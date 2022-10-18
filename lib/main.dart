@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pharmacy_mobile/Components/Cart/main.dart';
+import 'package:pharmacy_mobile/Components/banner/banner.dart';
 import 'package:pharmacy_mobile/Components/login/login.dart';
 import 'package:pharmacy_mobile/Components/product-details/product_details.dart';
 import 'package:pharmacy_mobile/Components/registration/registration.dart';
@@ -16,10 +17,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: (Colors.blueGrey),
       ),
-      home: const CartPage(title: 'Flutter Demo Home Page'),
+      home: Banner1(),
       // home: Registration(),
     );
   }
