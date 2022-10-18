@@ -6,6 +6,8 @@ import 'package:pharmacy_mobile/Components/product-details/product_details.dart'
 import 'package:pharmacy_mobile/Components/registration/registration.dart';
 import 'package:pharmacy_mobile/widgets/inputfields.dart';
 
+import 'Components/user-profile-page/userProfile.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -30,7 +32,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: UserProfile(),
     );
   }
 }
