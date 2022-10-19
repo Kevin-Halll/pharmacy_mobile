@@ -4,6 +4,8 @@ import 'package:pharmacy_mobile/Components/banner/banner.dart';
 import 'package:pharmacy_mobile/Components/login/login.dart';
 import 'package:pharmacy_mobile/Components/product-details/product_details.dart';
 import 'package:pharmacy_mobile/Components/registration/registration.dart';
+import 'package:pharmacy_mobile/constants/constants.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
