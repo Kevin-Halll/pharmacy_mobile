@@ -37,7 +37,7 @@ class Banner1 extends StatelessWidget {
                                     color: thirdBlue,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 25,
-                                    decoration: TextDecoration.none),
+                                    decoration: TextDecoration.none, fontFamily: 'Poppins'),
                               ),
                               Text(
                                 'Consultation from \nour in-house pharmasist',
@@ -45,7 +45,7 @@ class Banner1 extends StatelessWidget {
                                     color: Colors.black,
                                     fontSize: 14,
                                     decoration: TextDecoration.none,
-                                    fontWeight: FontWeight.normal),
+                                    fontWeight: FontWeight.normal, fontFamily: "Poppins"),
                               )
                             ],
                           ),
