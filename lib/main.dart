@@ -29,7 +29,14 @@ class MyApp extends StatelessWidget {
         primarySwatch: (Colors.blueGrey),
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      home: Category(),
+      home: UserProfile(),
+      // initialRoute: '/login',
+      routes: {
+        '/login': (context) => Login(),
+        '/register': (context) => Registration(),
+        '/categories': (context) => Category(),
+        '/user':(context) => UserProfile(),
+      },
       // home: Banner1(),
     );
   }

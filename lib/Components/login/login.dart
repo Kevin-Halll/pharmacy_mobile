@@ -17,9 +17,9 @@ class Login extends StatelessWidget {
               //<--------- logo --------->
               Column(
                 children: [
-                  Image(
-                    image: AssetImage('assets/images/pharmacy_logo.png'),
-                  ),
+                  // Image(
+                  //   image: AssetImage('assets/images/pharmacy_logo.png'),
+                  // ),
                   Text(
                     'Amber Care Pharmaceuticals',
                     style: TextStyle(color: Color.fromRGBO(27, 117, 188, 0.0)),
@@ -146,8 +146,7 @@ class _LoginFormState extends State<LoginForm> {
             GestureDetector(
               // function that allows naviagtion to sign up page
               onTap: () {
-                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (BuildContext context) => Registration()));
+                Navigator.pushNamed(context, '/register');
               },
 
               child: Text(

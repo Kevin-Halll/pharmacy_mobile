@@ -37,7 +37,8 @@ class Banner1 extends StatelessWidget {
                                     color: thirdBlue,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 25,
-                                    decoration: TextDecoration.none, fontFamily: 'Poppins'),
+                                    decoration: TextDecoration.none,
+                                    fontFamily: 'Poppins'),
                               ),
                               Text(
                                 'Consultation from \nour in-house pharmasist',
@@ -45,7 +46,8 @@ class Banner1 extends StatelessWidget {
                                     color: Colors.black,
                                     fontSize: 14,
                                     decoration: TextDecoration.none,
-                                    fontWeight: FontWeight.normal, fontFamily: "Poppins"),
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "Poppins"),
                               )
                             ],
                           ),
@@ -76,7 +78,7 @@ class Banner1 extends StatelessWidget {
                 SizedBox(
                   width: 35,
                 ),
-                Image.asset('/images/doctor.png',
+                Image.asset('assets/images/doctor.png',
                     width: 150, height: 180, alignment: Alignment.bottomLeft),
               ],
             ),
@@ -147,7 +149,7 @@ class Banner1 extends StatelessWidget {
                 SizedBox(
                   width: 35,
                 ),
-                Image.asset('/images/opened-bottle-of-pills.png',
+                Image.asset('assets/images/opened-bottle-of-pills.png',
                     width: 150, height: 180, alignment: Alignment.bottomLeft),
               ],
             ),
@@ -211,7 +213,7 @@ class Banner1 extends StatelessWidget {
                 SizedBox(
                   width: 20,
                 ),
-                Image.asset('/images/delivery-man.png',
+                Image.asset('assets/images/delivery-man.png',
                     height: 175, alignment: Alignment.bottomLeft),
               ],
             ),

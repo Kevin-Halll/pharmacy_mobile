@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pharmacy_mobile/Components/banner/banner.dart';
 
 import '../../constants/constants.dart';
+import '../shop-by-category/shopByCategory.dart';
 
 class UserProfile extends StatefulWidget {
   const UserProfile({super.key});
@@ -143,11 +144,16 @@ class _UserProfileState extends State<UserProfile> {
                                 style: TextStyle(
                                     color: Color.fromARGB(156, 32, 32, 32),
                                     fontWeight: FontWeight.bold)),
-                            Text(
-                              'SEE ALL',
-                              style: TextStyle(
-                                  color: thirdBlue,
-                                  fontWeight: FontWeight.bold),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.pushNamed(context, '/categories');
+                              },
+                              child: Text(
+                                'SEE ALL',
+                                style: TextStyle(
+                                    color: thirdBlue,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             )
                           ],
                         ),
