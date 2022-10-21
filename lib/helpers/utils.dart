@@ -1,6 +1,7 @@
 import 'package:pharmacy_mobile/models/category.dart';
 import 'package:flutter/cupertino.dart';
 
+// <--------------- list with each item --------------->
 List<Category> Categories = [
   Category(
       name: 'Orthopedic',

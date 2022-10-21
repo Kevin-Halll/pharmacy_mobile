@@ -1,4 +1,4 @@
-
+// <--------------- model for category--------------->
 class Category {
   String name;
   dynamic img;

@@ -20,6 +20,7 @@ class _CategoryState extends State<Category> {
             SizedBox(
               height: 40.0,
             ),
+            // <--------------- header section --------------->
             Text(
               'Shop by Categories',
               style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
@@ -27,6 +28,8 @@ class _CategoryState extends State<Category> {
             SizedBox(
               height: 40.0,
             ),
+
+// <--------------- grid that displays items in a grid view --------------->
             GridView.count(
                 shrinkWrap: true,
                 primary: false,
@@ -35,7 +38,10 @@ class _CategoryState extends State<Category> {
                 mainAxisSpacing: 22,
                 crossAxisCount: 3,
                 childAspectRatio: 0.8,
-                children: List.generate(Categories.length, (index) {
+                children:
+
+                    // <--------------- list generated from list called categories --------------->
+                    List.generate(Categories.length, (index) {
                   return Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(12)),
@@ -45,7 +51,8 @@ class _CategoryState extends State<Category> {
                     child: Column(
                       children: [
                         const CircleAvatar(
-                            backgroundColor: Colors.purple, radius: 35.0),
+                            backgroundImage:
+                                NetworkImage('Categories[index].img')),
                         TextButton(
                           onPressed: () {},
                           child: Text(Categories[index].name,
