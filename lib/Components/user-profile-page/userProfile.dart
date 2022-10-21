@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pharmacy_mobile/Components/banner/banner.dart';
+import 'package:pharmacy_mobile/helpers/utils.dart';
 import '../../constants/constants.dart';
 
 class UserProfile extends StatefulWidget {
@@ -162,10 +163,10 @@ class _UserProfileState extends State<UserProfile> {
                         Container(
                           height: 170,
                           child: ListView.builder(
-                              itemCount: 4,
+                              itemCount: Categories.length,
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (context, index) {
-                                return _categories();
+                                return _categories(index);
                               }),
                         )
                       ],
@@ -179,7 +180,7 @@ class _UserProfileState extends State<UserProfile> {
   }
 }
 
-Widget _categories() {
+Widget _categories(int index) {
   return Container(
     child: Column(
       children: [
@@ -193,7 +194,7 @@ Widget _categories() {
           height: 10,
         ),
         Text(
-          'Orthopaedic',
+          '${Categories[index].name}',
           style: TextStyle(fontWeight: FontWeight.bold),
         )
       ],
