@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pharmacy_mobile/Components/registration/registration.dart';
 import 'package:pharmacy_mobile/widgets/inputfields.dart';
 import 'package:pharmacy_mobile/widgets/mainButtons.dart';
 

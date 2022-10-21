@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pharmacy_mobile/Components/login/login.dart';
-// import 'package:pharmacy_mobile/widgets/buttons.dart';
-// import 'package:pharmacy_mobile/widgets/inputField.dart';
 import 'package:pharmacy_mobile/widgets/inputfields.dart';
 import 'package:pharmacy_mobile/widgets/mainButtons.dart';
 

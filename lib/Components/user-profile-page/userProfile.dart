@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pharmacy_mobile/Components/banner/banner.dart';
-
 import '../../constants/constants.dart';
-import '../shop-by-category/shopByCategory.dart';
 
 class UserProfile extends StatefulWidget {
   const UserProfile({super.key});
