@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pharmacy_mobile/Components/login/login.dart';
-// import 'package:pharmacy_mobile/widgets/buttons.dart';
-// import 'package:pharmacy_mobile/widgets/inputField.dart';
 import 'package:pharmacy_mobile/widgets/inputfields.dart';
 import 'package:pharmacy_mobile/widgets/mainButtons.dart';
 
@@ -17,7 +14,7 @@ class Registration extends StatelessWidget {
           child: Column(
             children: [
               //<--------- logo --------->
-              Image(image: AssetImage('assets/images/logos.png')),
+              // Image(image: AssetImage('assets/images/logos.png')),
               SizedBox(
                 height: 20,
               ),
@@ -144,8 +141,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
             GestureDetector(
               // function that allows naviagtion to sign in page,
               onTap: () {
-                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (BuildContext context) => Login()));
+                Navigator.pushNamed(context, '/login');
               },
               child: Text(
                 ' Sign in',
