@@ -131,7 +131,7 @@ class _UserProfileState extends State<UserProfile> {
                     margin: EdgeInsets.only(top: 20, bottom: 20),
                     padding: EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                        color: Color.fromRGBO(231, 241, 248, 10),
+                        color: mainBlue,
                         borderRadius: BorderRadius.circular(7.32)),
                     child: Column(
                       children: [
@@ -162,16 +162,17 @@ class _UserProfileState extends State<UserProfile> {
                         Container(
                           height: 170,
                           child: ListView.builder(
-                              itemCount: 4,
+                              itemCount: 8,
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (context, index) {
                                 return _categories();
                               }),
-                        )
+                        ),
                       ],
                     )),
 
                 //<------------ specail offers ------------>
+                Offers(),
               ],
             ),
           ),
@@ -185,8 +186,7 @@ Widget _categories() {
       children: [
         CircleAvatar(
           radius: 32.0,
-          // backgroundImage:
-          //     AssetImage('assets/images/sign.png'),
+          backgroundImage: AssetImage('assets/images/orthopedic.png'),
           backgroundColor: Colors.blue.shade50,
         ),
         SizedBox(
@@ -195,7 +195,7 @@ Widget _categories() {
         Text(
           'Orthopaedic',
           style: TextStyle(fontWeight: FontWeight.bold),
-        )
+        ),
       ],
     ),
     margin: EdgeInsets.fromLTRB(6, 20, 6, 4),
@@ -272,5 +272,98 @@ class _HamburgerMenuState extends State<HamburgerMenu> {
         ],
       ),
     );
+  }
+}
+
+class Offers extends StatelessWidget {
+  const Offers({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Special Offers',
+            style: TextStyle(
+              color: thirdBlue,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Products(),
+        ],
+      ),
+    );
+  }
+}
+
+class Products extends StatefulWidget {
+  const Products({Key? key}) : super(key: key);
+
+  @override
+  State<Products> createState() => _ProductsState();
+}
+
+class _ProductsState extends State<Products> {
+  var item = [
+    1,
+    2,
+    3,
+    4,
+    5,
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    // return Container();
+    return GridView.count(
+        shrinkWrap: true,
+        primary: false,
+        padding: const EdgeInsets.all(10),
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 22,
+        crossAxisCount: 2,
+        childAspectRatio: 0.8,
+        children:
+
+            // <--------------- list generated from list called categories --------------->
+            List.generate(item.length, (index) {
+          return Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(12)),
+              color: mainBlue,
+            ),
+            padding: const EdgeInsets.all(10),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                    // width: 130,
+                    height: 120,
+                    child: Image.asset(
+                      'assets/images/paracetamol.png',
+                      width: MediaQuery.of(context).size.width,
+                      fit: BoxFit.cover,
+                    )),
+                Column(
+                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Paracetamaol 500mg', style: TextStyle(fontWeight: FontWeight.bold),),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      // crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text("\$500", style: TextStyle(fontWeight: FontWeight.bold, color: thirdBlue)),
+                        IconButton(onPressed: (){}, icon: Icon(Icons.favorite, color: thirdBlue,))
+                      ],
+                    )
+                  ],
+                ),
+
+              ],
+            ),
+          );
+        }));
   }
 }

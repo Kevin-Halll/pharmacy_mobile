@@ -1,12 +1,48 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import '../../constants/constants.dart';
 
-class Banner1 extends StatelessWidget {
-  const Banner1({Key? key}) : super(key: key);
+class Banner1 extends StatefulWidget {
+  const Banner1({Key? key}) : super(key: key,);
 
   @override
+  State<Banner1> createState() => _Banner1State();
+}
+
+class _Banner1State extends State<Banner1> {
+  int _currentPage  =0;
+  Timer? _timer;
+  PageController _pageController = PageController(initialPage
+  :0);
+
+  @override
+  void initState() {
+    super.initState();
+    _timer = Timer.periodic(Duration(seconds: 5), (Timer timer) {
+      if (_currentPage < 2) {
+        _currentPage++;
+      } else {
+        _currentPage = 0;
+      }
+
+      _pageController.animateToPage(
+        _currentPage,
+        duration: Duration(milliseconds: 350),
+        curve: Curves.easeIn,
+      );
+    });
+  }
+
+   @override
+   void dispose() {
+     super.dispose();
+     _timer?.cancel();
+   }
+
   Widget build(BuildContext context) {
     return PageView(
+      controller: _pageController,
       children: [
         // SizedBox(height: 20,),
         Padding(
