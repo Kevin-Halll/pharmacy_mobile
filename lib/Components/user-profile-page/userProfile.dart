@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pharmacy_mobile/Components/banner/banner.dart';
+import 'package:pharmacy_mobile/helpers/utils.dart';
 import '../../constants/constants.dart';
 
 class UserProfile extends StatefulWidget {
@@ -165,7 +166,7 @@ class _UserProfileState extends State<UserProfile> {
                               itemCount: 8,
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (context, index) {
-                                return _categories();
+                                return _categories(index);
                               }),
                         ),
                       ],
@@ -180,7 +181,7 @@ class _UserProfileState extends State<UserProfile> {
   }
 }
 
-Widget _categories() {
+Widget _categories(int index) {
   return Container(
     child: Column(
       children: [
@@ -193,7 +194,7 @@ Widget _categories() {
           height: 10,
         ),
         Text(
-          'Orthopaedic',
+          '${Categories[index].name}',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
       ],
@@ -349,18 +350,27 @@ class _ProductsState extends State<Products> {
                 Column(
                   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Paracetamaol 500mg', style: TextStyle(fontWeight: FontWeight.bold),),
+                    Text(
+                      'Paracetamaol 500mg',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       // crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text("\$500", style: TextStyle(fontWeight: FontWeight.bold, color: thirdBlue)),
-                        IconButton(onPressed: (){}, icon: Icon(Icons.favorite, color: thirdBlue,))
+                        Text("\$500",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, color: thirdBlue)),
+                        IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.favorite,
+                              color: thirdBlue,
+                            ))
                       ],
                     )
                   ],
                 ),
-
               ],
             ),
           );
