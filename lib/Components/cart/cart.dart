@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pharmacy_app_v2/widgets/cart_list_widget.dart';
+import '../../widgets/cart_list_widget.dart';
 
 import '../../data/data.dart';
 import '../../models/cartItemModel.dart';
