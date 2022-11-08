@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pharmacy_mobile/Components/product-details/product_details.dart';
+import './Components/product-details/product_details.dart';
 
 void main() {
   runApp(const MyApp());

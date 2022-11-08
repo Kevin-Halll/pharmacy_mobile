@@ -108,7 +108,8 @@ int _counter = 1;
                           fontWeight: FontWeight.w600,
                           color: Colors.blue,
                         ),
-                      )),
+                      )
+                      ),
                       // SizedBox(width: 200),
                       Container(
                           child: Row(
