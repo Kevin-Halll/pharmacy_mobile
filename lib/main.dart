@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pharmacy_mobile/Components/product-details/product_details.dart';
+import 'package:pharmacy_mobile/Components/cart/cart.dart';
+import './Components/product-details/product_details.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,6 +27,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      routes: {
+        CartPage.routeName: (ctx) => CartPage(),
+        // Cart.routeName: (ctx) => CartPage(),
+      },
     );
   }
 }
